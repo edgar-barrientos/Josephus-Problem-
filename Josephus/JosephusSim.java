@@ -47,10 +47,24 @@ public class JosephusSim {
 
   public void eliminate() {
     // count to the elimination count
+    int min = 1; 
+    int max = size / 2;
+    
+    eliminationCount = Math.random() * (max - min) + 1));
+    
+    for(int i = 0; i < eliminationCount; i++) {
+      track = track.next();
+    }
+    track = track.next.next();
 
     // print who will be eliminated
+    
+    System.out.println(personNode.next());
+    
 
     // eliminate the person and update "front" of the circle and size
+    
+
 
   }
 
