@@ -18,15 +18,22 @@ public class JosephusSim {
         String name = file.nextLine();
 
         PersonNode personNode = new PersonNode(name);
-        if (circle != null) {
-          circle.next = personNode;
+      
+        if (track != null) {
+          track.next = personNode;
         }
-        circle = personNode;
-        list.add(circle);
+        track = personNode;
 
         size++;
+        
+        if(size == 1) {
+         circle = personNode;
       }
+      
+      track.next = circle;
       System.out.println(list);
+    }
+
 
       // remember the last node as the one in front of the next to get eliminated
 
