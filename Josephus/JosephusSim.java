@@ -78,8 +78,9 @@ public class JosephusSim {
 
   public boolean isOver() {
     // check if there's only one person left in the circle
-    return false;
+    return size == 1;
   }
+
 
   public String toString() {
     // if there's only one person left, print them as the last survivor
