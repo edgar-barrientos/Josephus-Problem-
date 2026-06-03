@@ -50,16 +50,16 @@ public class JosephusSim {
     int min = 1; 
     int max = size / 2;
     
-    eliminationCount = Math.random() * (max - min) + 1));
+    eliminationCount = (int)(Math.random() * (max - min) + 1));
     
-    for(int i = 0; i < eliminationCount; i++) {
-      track = track.next();
+    for(int i = 1; i < eliminationCount; i++) {
+      track = track.next;
     }
-    track = track.next.next();
+    PersonNode subject = track.next;
 
     // print who will be eliminated
     
-    System.out.println(personNode.next());
+    System.out.println("Eliminated: " + subject);
     
 
     // eliminate the person and update "front" of the circle and size
@@ -67,6 +67,7 @@ public class JosephusSim {
 
 
   }
+
 
   public boolean isOver() {
     // check if there's only one person left in the circle
