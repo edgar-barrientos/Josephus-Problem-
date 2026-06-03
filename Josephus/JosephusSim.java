@@ -50,7 +50,7 @@ public class JosephusSim {
     int min = 1; 
     int max = size / 2;
     
-    eliminationCount = (int)(Math.random() * (max - min) + 1));
+    eliminationCount = (int)(Math.random() * (max - min + 1)) + min;
     
     for(int i = 1; i < eliminationCount; i++) {
       track = track.next;
@@ -63,6 +63,13 @@ public class JosephusSim {
     
 
     // eliminate the person and update "front" of the circle and size
+     if (subject == circle) {
+        circle = circle.next;
+    }
+
+    track.next = subject.next;
+
+    size--;
     
 
 
