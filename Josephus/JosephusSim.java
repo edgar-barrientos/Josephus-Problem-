@@ -9,38 +9,37 @@ public class JosephusSim {
 
   public JosephusSim(String fileName) {
     try {
-      // load names from the file in order, generating a singly linked list of PersonNodes
-      Scanner file = new Scanner(new File(fileName));
-      ArrayList<PersonNode> list = new ArrayList<PersonNode>();
+         // load names from the file in order, generating a singly linked list of PersonNodes
+         Scanner file = new Scanner(new File(fileName));
+      
+         // make the ring circular by attaching last node's next to front
+         while (file.hasNextLine()) {
+            String name = file.nextLine();
+         
+            PersonNode personNode = new PersonNode(name);
+         
+            if (track != null) {
+               track.next = personNode;
+            }
+            track = personNode;
+         
+            size++;
+            if (size == 1) {
+               circle = personNode;
+            }
+         }
+              
+         // remember the last node as the one in front of the next to get eliminated
+          track.next = circle;
+          System.out.println(list);
 
-      // make the ring circular by attaching last node's next to front
-      while (file.hasNextLine()) {
-        String name = file.nextLine();
-
-        PersonNode personNode = new PersonNode(name);
-
-        if (track != null) {
-          track.next = personNode;
-        }
-        track = personNode;
-
-        size++;
-        list.add(personNode);
-        if (size == 1) {
-          circle = personNode;
-        }
+      
+         // generate, print, and save the random elimination count
+      
+      } catch (FileNotFoundException e) {
+         System.out.println("Something went wrong with " + fileName);
       }
-      track.next = circle;
-      System.out.println(list);
-
-      // remember the last node as the one in front of the next to get eliminated
-
-      // generate, print, and save the random elimination count
-
-    } catch (FileNotFoundException e) {
-      System.out.println("Something went wrong with " + fileName);
-    }
-  }
+   }
 
   // optional helper method for constructing the circle
   private void add(String val) {}
