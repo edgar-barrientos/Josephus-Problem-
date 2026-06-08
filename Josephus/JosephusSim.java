@@ -31,10 +31,12 @@ public class JosephusSim {
               
          // remember the last node as the one in front of the next to get eliminated
           track.next = circle;
-          System.out.println(list);
 
       
          // generate, print, and save the random elimination count
+          eliminationCount = (int)(Math.random() * (size / 2)) + 1;
+          System.out.println("Elimination Count = " + eliminationCount);
+
       
       } catch (FileNotFoundException e) {
          System.out.println("Something went wrong with " + fileName);
@@ -46,11 +48,6 @@ public class JosephusSim {
 
   public void eliminate() {
     // count to the elimination count
-    int min = 1; 
-    int max = size / 2;
-    
-    eliminationCount = (int)(Math.random() * (max - min + 1)) + min;
-    
     for(int i = 1; i < eliminationCount; i++) {
       track = track.next;
     }
